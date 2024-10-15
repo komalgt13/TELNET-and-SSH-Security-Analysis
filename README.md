@@ -15,14 +15,11 @@ This project aims to capture TELNET traffic to demonstrate its vulnerabilities a
 
 - **TELNET/telnet_setup.sh**: A bash script that sets up the Telnet server and client.
 - **SSH/ssh_setup.sh**: A bash script that sets up the SSH server and client.
-- **TELNET/telnet_capture.sh**: A bash script that captures Telnet traffic on wireshark.
-- **SSH/ssh_capture.sh**: A bash script that captures SSH traffic on wireshark.
-- **analyze_capture.py**: A Python script that analyzes the captured packets.
 
 ## Requirements
-- Wireshark (with `tshark` command-line tool)
-- Python 3.x
-- PyShark library (install using `pip install pyshark`)
+- Wireshark 
+- telnet and SSH setup on system
+- can use Docker for macOS
 
 ## Steps to Replicate
 
@@ -31,9 +28,8 @@ This project aims to capture TELNET traffic to demonstrate its vulnerabilities a
 
    ```bash
    sudo apt install wireshark
-   sudo apt install tshark
 
-   Make sure wireshark runs in the background under loopback-lo for localhost connection.
+   Make sure wireshark runs in the background under loopback-lo for localhost connection or any other connection if used.
 
 2. **Make the files executable**
    chmod +x TELNET/telnet_setup.sh
@@ -45,5 +41,6 @@ This project aims to capture TELNET traffic to demonstrate its vulnerabilities a
     ./TELNET/telnet_setup.sh
     ./SSH/ssh_setup.sh
 
-
-
+4. **Analyze the capture on wireshark**
+   Apply filter "telnet" for capturing telnet traffic and "ssh" for capturing SSH traffic over the network. Click on Analyze option from the menu and see the packets received. 
+   

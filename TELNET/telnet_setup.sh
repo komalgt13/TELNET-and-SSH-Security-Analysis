@@ -23,6 +23,9 @@ sudo ufw allow 23
 #install telnet client
 sudo apt install telnet
 
-echo "Telnet server setup completed. You can connect using 'telnet <server-ip>'."
+echo "Telnet server setup completed."
 
-telnet localhost
+echo "IP address you want to log into."
+read ip
+
+telnet $ip
