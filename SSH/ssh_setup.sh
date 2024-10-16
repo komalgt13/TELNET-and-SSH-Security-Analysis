@@ -1,4 +1,4 @@
-!/bin/bash
+# !/bin/bash
 
 # Update package lists
 sudo apt update
@@ -60,7 +60,7 @@ elif [ "$choice" -eq 2 ]; then
 elif [ "$choice" -eq 3 ]; then
     #edit the file for enhanced protection
     sudo nano /etc/ssh/sshd_config
-    
+
 else
     echo "Invalid choice. Please run the script again and choose 1 or 2."
     exit 1
